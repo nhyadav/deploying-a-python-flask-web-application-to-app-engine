@@ -97,4 +97,58 @@ Using the absolute path of the generated key, set an environment variable for yo
 	<p>Execute the following command to start your application:</p>
 
 	<code>python main.py</code>
+	<p>Once the application starts, click on the Web Preview icon in the Cloud Shell toolbar and choose "Preview on port 8080."</p>
+	<p>A tab in your browser opens and connects to the server you just started. You should see something like your app , after you van test the your app.</p>
+</pre>
+
+<h5>Exploring the Code</h5>
+<pre>
+	<p>Sample Code Layout
+	The sample has the following layout:</p>
+	<code>
+		templates/
+ 		homepage.html   /* HTML template that uses Jinja2 */
+		app.yaml          /* App Engine application configuration file */
+		main.py           /* Python Flask web application */
+		requirements.txt  /* List of dependencies for the project */
+	</code>
+</pre>
+
+<h5>Deploying the App to App Engine Flexible</h5>
+<pre>
+	<p>App Engine Flexible uses a file called app.yaml to describe an application's deployment configuration. If this file is not present, App Engine will try to guess the deployment configuration. However, it is a good idea to provide this file.
+
+	Next, you will modify app.yaml using an editor of your choice vim, nano, or emacs. We will use the nano editor:</p>
+	<code>nano app.yaml</code>
+	<p>Once you have app.yaml open, replace <your-cloud-storage-bucket> with the name of your Cloud Storage bucket. (If you forgot the name of your Cloud Storage bucket, copy the Project ID from the Qwiklabs tab). The env_variables section sets up environment variables that will be used in main.py once the application is deployed.</p>
+		<code>
+			runtime: python
+			env: flex
+			entrypoint: gunicorn -b :$PORT main:app
+
+			runtime_config:
+			    python_version: 3
+
+			env_variables:
+    		CLOUD_STORAGE_BUCKET: <your-cloud-storage-bucket>
+		</code>
+
+		<p>This is the basic configuration needed to deploy a Python 3 App Engine Flex application. You can learn more about configuring App Engine here.
+
+		You can now save and close the file in nano by using (Ctrl + x), which will prompt:
+		Type a letter Y and then press the ENTER key one more time to confirm the filename for the following prompt:
+		</p>
+
+		<p>Update your Cloud Build timeout:</p>
+		<code>gcloud config set app/cloud_build_timeout 1000</code>
+		<p>Deploy your app on App Engine by using gcloud:</p>
+		<code>gcloud app deploy</code>
+		<p>If asked, Do you want to continue (Y/n), press Y and then Enter.
+
+Watch in Cloud Shell as the application gets built. This will take up to 10 minutes. The App Engine Flexible environment is automatically provisioning a Compute Engine virtual machine for you behind the scenes, and then installing the application, then starting it.</p>
+<p>After the application is deployed, open the app in your web browser with the following URL:</p>
+<code>
+		https://<PROJECT_ID>.appspot.com
+</code>
+<p>Thank You</p>
 </pre>
