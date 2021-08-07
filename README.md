@@ -120,7 +120,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 	</pre>
 
 <h5>Deploying the App to App Engine Flexible</h5>
-	<pre>
+	
 	<p>App Engine Flexible uses a file called app.yaml to describe an application's deployment configuration. If this file is not present, App Engine will try to guess the 	deployment configuration. However, it is a good idea to provide this file.
 
 	Next, you will modify app.yaml using an editor of your choice vim, nano, or emacs. We will use the nano editor:</p>
@@ -166,4 +166,4 @@ Using the absolute path of the generated key, set an environment variable for yo
 	</code>
 	</pre>
 	<p>Thank You</p>
-</pre>
+
