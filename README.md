@@ -14,32 +14,32 @@ App Engine's Flexible Environment supports a host of programming languages, incl
 <p>Enable required API, To enable API goto <b>Navigation Button-> API & Services -> Library</b> then search API and click on enable butoon.</p>
 
 <ul>
-<li>Set an environment variable for [YOUR_PROJECT_ID], replacing [YOUR_PROJECT_ID] with your own project ID:</li>
+Set an environment variable for [YOUR_PROJECT_ID], replacing [YOUR_PROJECT_ID] with your own project ID:
 <pre>
 	<code>
 	export PROJECT_ID=[YOUR_PROJECT_ID]
 </code>
 </pre>
-<li>Create a Service Account to access the Google Cloud APIs when testing locally:
+Create a Service Account to access the Google Cloud APIs when testing locally:
 	<pre>
 		<code>
-			gcloud iam service-accounts create qwiklab \
-  			--display-name "My Qwiklab Service Account"
+	gcloud iam service-accounts create qwiklab \
+	--display-name "My Qwiklab Service Account"
 		</code>
 	</pre>
 	Give your newly created Service Account appropriate permissions:
 	<pre>
 		<code>
-			gcloud projects add-iam-policy-binding ${PROJECT_ID} \
-			--member serviceAccount:qwiklab@${PROJECT_ID}.iam.gserviceaccount.com \
-			--role roles/owner
+	gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+	--member serviceAccount:qwiklab@${PROJECT_ID}.iam.gserviceaccount.com \
+	--role roles/owner
 		</code>
 	</pre>
 	After creating your Service Account, create a Service Account key:
 	<pre>
 		<code>
-			gcloud iam service-accounts keys create ~/key.json \
-			--iam-account qwiklab@${PROJECT_ID}.iam.gserviceaccount.com
+	gcloud iam service-accounts keys create ~/key.json \
+	--iam-account qwiklab@${PROJECT_ID}.iam.gserviceaccount.com
 		</code>
 	</pre>
 <p>Above command generates a service account key stored in a JSON file named key.json in your home directory.
@@ -52,7 +52,6 @@ Using the absolute path of the generated key, set an environment variable for yo
 </pre>
 
 </p>
-<li>
 </ul>
 <h3><b>2. Testing the Application Locally</b></h3>
 
@@ -61,20 +60,20 @@ Using the absolute path of the generated key, set an environment variable for yo
 <p>Create an isolated Python 3 environment named env with virtualenv:</p>
 <pre>
 	<code>
-		virtualenv -p python3 env
+	virtualenv -p python3 env
 	</code>
 </pre>
 
 <p>Enter your newly created virtualenv named env:</p>
 <pre>
 	<code>
-		source env/bin/activate
+	source env/bin/activate
 	</code>
 </pre>
 <p>Use pip to install dependencies for your project from the requirements.txt file</p>
 <pre>
 	<code>
-		pip install -r requirements.txt
+	pip install -r requirements.txt
 	</code>
 </pre>
 <p>The requirements.txt file is a list of package dependencies you need for your project. The above command downloaded all of these listed package 				dependencies to the virtualenv.</p>
@@ -83,7 +82,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 <h3><b>3.  Next, create an App Engine instance by using:</b></h3>
 	<pre>
 	<code>
-		gcloud app create
+	gcloud app create
 	</code>
 	</pre>
 	<p>A prompt will display a list of regions. Select a Region that supports App Engine Flexible for Python then press Enter. You can read more about Regions and Zones 		here.</p>
@@ -91,16 +90,19 @@ Using the absolute path of the generated key, set an environment variable for yo
 <h3><b>4. Creating a Storage Bucket</b></h3>
 	<p>First, set the environment variable CLOUD_STORAGE_BUCKET equal to the name of your PROJECT_ID. (It is generally recommended to name your bucket the same as your 		PROJECT_ID for convenience purposes).</p>
 	<pre>
-	<code>export CLOUD_STORAGE_BUCKET=${PROJECT_ID}</code>
+	<code>
+	export CLOUD_STORAGE_BUCKET=${PROJECT_ID}</code>
 	</pre>
 	<p>Now run the following command to create a bucket with the same name as your PROJECT_ID.</p>
 	<pre>
-	<code>gsutil mb gs://${PROJECT_ID}</code>
+	<code>
+	gsutil mb gs://${PROJECT_ID}</code>
 	</pre>
 	<h5>Running the Application</h5>
 	<p>Execute the following command to start your application:</p>
 	<pre>
-	<code>python main.py</code>
+	<code>
+	python main.py</code>
 	</pre>
 	<p>Once the application starts, click on the Web Preview icon in the Cloud Shell toolbar and choose "Preview on port 8080."</p>
 	<p>A tab in your browser opens and connects to the server you just started. You should see something like your app , after you van test the your app.</p>
