@@ -9,10 +9,11 @@ App Engine applications automatically scale based on incoming traffic. Load bala
 
 App Engine's Flexible Environment supports a host of programming languages, including Java, Python, PHP, NodeJS, Ruby, and Go. App Engine's Standard Environment is an additional option for certain languages including Python. The two environments give users maximum flexibility in how their application behaves since each environment has certain strengths. Read Choosing an App Engine Environment for more information.
 </p>
-<h3>Authenticate API Requests</h3>
+## Steps for deploying flask web apploication on GCP
+<h3><b>1. Authenticate API Requests</b></h3>
 <p>Enable required API, To enable API goto <b>Navigation Button-> API & Services -> Library</b> then search API and click on enable butoon.</p>
 
-<ul> Steps for deploying flask web apploication on GCP
+<ul>
 <li>Set an environment variable for [YOUR_PROJECT_ID], replacing [YOUR_PROJECT_ID] with your own project ID:</li>
 <pre>
 	<code>
@@ -53,7 +54,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 </p>
 <li>
 </ul>
-<h3>Testing the Application Locally</h3>
+<h3><b>2. Testing the Application Locally</b></h3>
 
 <h5>Starting your virtual environment and installing dependencies.</h5>
 
@@ -79,7 +80,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 <p>The requirements.txt file is a list of package dependencies you need for your project. The above command downloaded all of these listed package 				dependencies to the virtualenv.</p>
 <p>The requirements.txt file is a list of package dependencies you need for your project. The above command downloaded all of these listed package dependencies to the 		virtualenv.</p>
 
-<h5>Next, create an App Engine instance by using:</h5>
+<h5><b>3. Next, create an App Engine instance by using:</b></h5>
 	<pre>
 	<code>
 		gcloud app create
@@ -87,7 +88,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 	</pre>
 	<p>A prompt will display a list of regions. Select a Region that supports App Engine Flexible for Python then press Enter. You can read more about Regions and Zones 		here.</p>
 
-<h5>Creating a Storage Bucket</h5>
+<h5><b>4. Creating a Storage Bucket</b></h5>
 	<p>First, set the environment variable CLOUD_STORAGE_BUCKET equal to the name of your PROJECT_ID. (It is generally recommended to name your bucket the same as your 		PROJECT_ID for convenience purposes).</p>
 	<pre>
 	<code>export CLOUD_STORAGE_BUCKET=${PROJECT_ID}</code>
@@ -105,7 +106,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 	<p>A tab in your browser opens and connects to the server you just started. You should see something like your app , after you van test the your app.</p>
 
 
-<h5>Exploring the Code</h5>
+<h5><b>5. Exploring the Code</b></h5>
 	
 <p>Sample Code Layout
 The sample has the following layout:</p>
@@ -119,7 +120,7 @@ The sample has the following layout:</p>
 </code>
 </pre>
 
-<h5>Deploying the App to App Engine Flexible</h5>
+<h5><b>6. Deploying the App to App Engine Flexible</b></h5>
 	
 <p>App Engine Flexible uses a file called app.yaml to describe an application's deployment configuration. If this file is not present, App Engine will try to guess the 	deployment configuration. However, it is a good idea to provide this file.
 
