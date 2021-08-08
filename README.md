@@ -47,7 +47,7 @@ Create a Service Account to access the Google Cloud APIs when testing locally:
 Using the absolute path of the generated key, set an environment variable for your service account key:
 <pre>
 	<code>
-		export GOOGLE_APPLICATION_CREDENTIALS="/home/${USER}/key.json"
+	export GOOGLE_APPLICATION_CREDENTIALS="/home/${USER}/key.json"
 	</code>
 </pre>
 
@@ -56,6 +56,10 @@ Using the absolute path of the generated key, set an environment variable for yo
 <h3><b>2. Testing the Application Locally</b></h3>
 
 <h5>Starting your virtual environment and installing dependencies.</h5>
+<p>you have to upload your python code in cloud, either you can upload to storage bucket or in cloud shell by cloning your git repository. To clone repository try below command.
+	<code>
+	git clone "your git https link for git repo"
+	</code>
 
 <p>Create an isolated Python 3 environment named env with virtualenv:</p>
 <pre>
