@@ -126,7 +126,7 @@ The sample has the following layout:</p>
 
 Next, you will modify app.yaml using an editor of your choice vim, nano, or emacs. We will use the nano editor:</p>
 <pre>
-<code>nano app.yaml</code>
+<code>	nano app.yaml</code>
 </pre>
 <p>Once you have app.yaml open, replace <your-cloud-storage-bucket> with the name of your Cloud Storage bucket. (If you forgot the name of your Cloud Storage bucket, 		copy the Project ID from the Qwiklabs tab). The env_variables section sets up environment variables that will be used in main.py once the application is deployed.</p>
 <pre>
@@ -134,12 +134,10 @@ Next, you will modify app.yaml using an editor of your choice vim, nano, or emac
 	runtime: python
 	env: flex
 	entrypoint: gunicorn -b :$PORT main:app
-
 	runtime_config:
-	    python_version: 3
-
+	python_version: 3
 	env_variables:
-CLOUD_STORAGE_BUCKET: <your-cloud-storage-bucket>
+	CLOUD_STORAGE_BUCKET: <your-cloud-storage-bucket>
 </code>
 </pre>
 
@@ -151,11 +149,11 @@ Type a letter Y and then press the ENTER key one more time to confirm the filena
 
 <p>Update your Cloud Build timeout:</p>
 <pre>
-<code>gcloud config set app/cloud_build_timeout 1000</code>
+<code>	gcloud config set app/cloud_build_timeout 1000</code>
 </pre>
 <p>Deploy your app on App Engine by using gcloud:</p>
 <pre>
-<code>gcloud app deploy</code>
+<code>	gcloud app deploy</code>
 </pre>
 <p>If asked, Do you want to continue (Y/n), press Y and then Enter.
 
