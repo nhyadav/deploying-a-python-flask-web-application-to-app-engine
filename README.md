@@ -80,7 +80,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 <p>The requirements.txt file is a list of package dependencies you need for your project. The above command downloaded all of these listed package 				dependencies to the virtualenv.</p>
 <p>The requirements.txt file is a list of package dependencies you need for your project. The above command downloaded all of these listed package dependencies to the 		virtualenv.</p>
 
-<h5><b>3. Next, create an App Engine instance by using:</b></h5>
+<h3><b>3.  Next, create an App Engine instance by using:</b></h3>
 	<pre>
 	<code>
 		gcloud app create
@@ -88,7 +88,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 	</pre>
 	<p>A prompt will display a list of regions. Select a Region that supports App Engine Flexible for Python then press Enter. You can read more about Regions and Zones 		here.</p>
 
-<h5><b>4. Creating a Storage Bucket</b></h5>
+<h3><b>4. Creating a Storage Bucket</b></h3>
 	<p>First, set the environment variable CLOUD_STORAGE_BUCKET equal to the name of your PROJECT_ID. (It is generally recommended to name your bucket the same as your 		PROJECT_ID for convenience purposes).</p>
 	<pre>
 	<code>export CLOUD_STORAGE_BUCKET=${PROJECT_ID}</code>
@@ -106,7 +106,7 @@ Using the absolute path of the generated key, set an environment variable for yo
 	<p>A tab in your browser opens and connects to the server you just started. You should see something like your app , after you van test the your app.</p>
 
 
-<h5><b>5. Exploring the Code</b></h5>
+<h3><b>5. Exploring the Code</b></h3>
 	
 <p>Sample Code Layout
 The sample has the following layout:</p>
@@ -120,7 +120,7 @@ The sample has the following layout:</p>
 </code>
 </pre>
 
-<h5><b>6. Deploying the App to App Engine Flexible</b></h5>
+<h3><b>6. Deploying the App to App Engine Flexible</b></h3>
 	
 <p>App Engine Flexible uses a file called app.yaml to describe an application's deployment configuration. If this file is not present, App Engine will try to guess the 	deployment configuration. However, it is a good idea to provide this file.
 
@@ -152,7 +152,7 @@ Type a letter Y and then press the ENTER key one more time to confirm the filena
 <p>Update your Cloud Build timeout:</p>
 <pre>
 <code>gcloud config set app/cloud_build_timeout 1000</code>
-</prfe>
+</pre>
 <p>Deploy your app on App Engine by using gcloud:</p>
 <pre>
 <code>gcloud app deploy</code>
